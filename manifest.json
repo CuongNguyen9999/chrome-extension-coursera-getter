@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Coursera Leech Link",
-  "description": "Get link Coursera Peer-review",
+  "name": "Coursera Get Shareable Link",
+  "description": "Get shareable link Coursera Peer-review",
   "version": "1.0.0",
   "icons": { "128": "icon_128.png" },
   "browser_action": {
