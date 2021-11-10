@@ -31,7 +31,7 @@ function displayLink(id) {
     `;
   } else {
     submissionID = id[0].substring(0, id[0].indexOf("~"));
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tab) {
+    browser.tabs.query({ active: true, currentWindow: true }, function (tab) {
       //Be aware that `tab` is an array of Tabs
       let fromIndex = 0;
       let countSlash = 0;
@@ -49,10 +49,10 @@ function displayLink(id) {
     });
   }
 }
-chrome.tabs.query({ active: true }, function (tabs) {
+browser.tabs.query({ active: true }, function (tabs) {
   var tab = tabs[0];
   tab_title = tab.title;
-  chrome.tabs.executeScript(
+  browser.tabs.executeScript(
     tab.id,
     {
       code: 'document.getElementsByClassName("_10nd10j")[0].id',
