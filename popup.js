@@ -1,24 +1,3 @@
-// window.onload = function () {
-//   var txtAreas = document.getElementsByTagName("textarea");
-//   for (var i = 0; i < txtAreas.length; i++) {
-//     document.getElementById("abc").value = txtAreas[i].id;
-//   }
-// };
-// var tab_title = '';
-// function display_h1 (results){
-//     console.log(results);
-//   h1=results;
-//   document.querySelector("#abc").value = h1;
-
-// }
-// chrome.tabs.query({active: true}, function(tabs) {
-//   var tab = tabs[0];
-//   tab_title = tab.title;
-//   chrome.tabs.executeScript(tab.id, {
-//     code: 'document.querySelector("._10nd10j").id'
-//   }, display_h1);
-// });
-
 var submissionID = "";
 function displayLink(id) {
   if (id == null || id[0] == null) {
