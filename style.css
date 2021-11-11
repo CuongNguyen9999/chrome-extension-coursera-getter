@@ -22,7 +22,7 @@ body {
 
   .form-control {
     color: rgb(184, 177, 168);
-    background-color: rgb(19, 21, 22);
+    background-color: rgb(37, 37, 37);
     border-color: rgb(57, 62, 65);
 }
 
@@ -104,6 +104,13 @@ body {
     color: #3b5998;
     background: #272727;
     border-color: #3b5998;
+  }
+
+  .rounded-social-buttons .social-button.github:hover,
+  .rounded-social-buttons .social-button.github:focus {
+    color: #000000;
+    background: #fefefe;
+    border-color: #000000;
   }
 
   .alert
