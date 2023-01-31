@@ -20,8 +20,9 @@
 // });
 
 var submissionID = "";
-function displayLink(id) {
-  if (id == null || id[0] == null) {
+function displayLink(injectionResult) {
+  var id = injectionResult?.[0].result;
+  if (id == null) {
     document.querySelector(".input-group").style.display = "none";
     document.querySelector(".container").innerHTML += `
     <div class="alert alert-warning" role="alert">
@@ -30,7 +31,7 @@ function displayLink(id) {
     </div>
     `;
   } else {
-    submissionID = id[0].substring(0, id[0].indexOf("~"));
+    submissionID = id.substring(0, id.indexOf("~"));
     chrome.tabs.query({ active: true, currentWindow: true }, function (tab) {
       //Be aware that `tab` is an array of Tabs
       let fromIndex = 0;
@@ -49,17 +50,23 @@ function displayLink(id) {
     });
   }
 }
+
+function getSubmissionId() {
+  return document.getElementsByClassName("_10nd10j")[0]?.id;
+}
+
 chrome.tabs.query({ active: true }, function (tabs) {
   var tab = tabs[0];
   tab_title = tab.title;
-  chrome.tabs.executeScript(
-    tab.id,
+  chrome.scripting.executeScript(
     {
-      code: 'document.getElementsByClassName("_10nd10j")[0].id',
+      target: {tabId: tab.id},
+      func: getSubmissionId,
     },
     displayLink
   );
 });
+
 window.onload = function () {
   "use strict";
 
